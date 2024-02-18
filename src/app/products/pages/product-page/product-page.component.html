@@ -1,0 +1,27 @@
+<h1 class="text-xl md:text-5xl font-bold text-zinc-500">Agregar producto</h1>
+<br />
+<hr class="w-[95%] m-auto" />
+
+<form class="grid grid-cols-12 mt-5 ml-8 text-slate-600 font-medium" [formGroup]="myForm">
+  <div class="col-span-12 md:col-span-6 gap-3 flex items-center">
+    <label>Nombre: </label>
+    <input type="text" class="px-3 py-1 rounded-md ring-1 ring-slate-300 outline-none" formControlName="name" />
+    <span customLabel [color]="color"
+    [errors]="myForm.get('name')?.errors"
+    ></span>
+  </div>
+
+  <button class="px-3 pt-1 pb-2 text-violet-400 text-center rounded-md bg-zinc-100 shadow-md
+  w-[205px] col-span-12 mt-5" (click)="changeColor()">Cambiar color </button>
+
+</form>
+<br />
+
+<pre class="">
+  <code>
+  {{ myForm.get('name')?.errors | json }}
+  </code>
+</pre>
+
+<br />
+<p>Color: {{color}}</p>

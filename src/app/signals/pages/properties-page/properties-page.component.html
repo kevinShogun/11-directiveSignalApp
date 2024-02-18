@@ -1,0 +1,30 @@
+<h1 class="text-3xl font-bold text-zinc-500">Mutaciones</h1>
+<br />
+<hr />
+<br /><br />
+<div class="grid grid-cols-12 ml-3 h-auto">
+  <div class="col-span-6 gap-3">
+    <input type="text" #txtEmail class="px-3 rounded-sm outline-red-300 ring-1 py-2 w-full my-1.5"
+      (input)="onFieldUpdated('email', txtEmail.value)" [value]="user().email">
+
+    <input type="text" #txtFirstName class="px-3 rounded-sm outline-red-300 ring-1 py-2 w-full my-1.5"
+      (input)="onFieldUpdated('first_name', txtFirstName.value)" [value]="user().first_name">
+
+    <input type="text" #txtLastName class="px-3 rounded-sm outline-red-300 ring-1 py-2 w-full my-1.5"
+      (input)="onFieldUpdated('last_name', txtLastName.value)" [value]="user().last_name">
+
+  </div>
+  <div class="col-span-6 ml-3">
+    <pre>
+      <code>
+        {{user() | json}}
+      </code>
+    </pre>
+    <br />
+      {{ fullName()}}
+      <button class="bg-slate-500 rounded-sm shadow-md px-4 pt-1 pb-2 text-white font-medium">
+         + 1
+      </button>
+  </div>
+
+</div>
